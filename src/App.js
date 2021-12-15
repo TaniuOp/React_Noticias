@@ -1,25 +1,45 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
+
+// Importamos BrowserRouter para hacer redirecciones 
+import { BrowserRouter} from 'react-router-dom';
+
+// Importamos userContext 
+import {userContext} from '../src/context/userContext'
+
 
 function App() {
+  const [user, setUser] = useState({ name: ""}); 
+  // Estado de user inicial  --> Provider 
+  const login = (name) =>  setUser({ name }) 
+  //Set de user = name 
+  const logout = () => setUser({ name: "" }) 
+  //Set de user = "" 
+
+  const value = {
+    user, 
+    login,
+    logout
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <userContext.Provider value={value}>
+        <Header />
+        <Main />
+        </userContext.Provider>
+      </BrowserRouter>
+      <Footer />
+      <img src={logo} className="App-logo" alt="logo" />
     </div>
   );
 }
 
 export default App;
+
+
