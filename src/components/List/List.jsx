@@ -22,7 +22,7 @@ class List extends Component {
   }
 
   paintNews = () => {
-    return this.state.nyTimesNews.map((news, i) =>  <Card info={news} key={i} delete={() => this.deleteOneNews(i)} key={i}/>)
+    return this.state.nyTimesNews.map((news, i) =>  <Card info={news} delete={() => this.deleteOneNews(i)} key={i}/>)
   }
 
   deleteOneNews = (i) => {
