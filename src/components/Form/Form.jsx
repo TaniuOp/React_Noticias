@@ -18,9 +18,6 @@ class Form extends Component {
         <label htmlFor="newsAbstract">Abstract:</label><br />
         <input type="text" id="newsAbstract" name="newsAbstract" />
         <br />
-        <label htmlFor="newsImage">Multimedia:</label><br />
-        <input type="url" id="newsImage" name="newsImage" />
-        <br />
         <br />
         <input type="submit" value="Add news"/> 
       </form> 

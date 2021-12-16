@@ -6,7 +6,17 @@ import List from "../List"
 import {Route, Routes} from 'react-router-dom';
 // Para el uso de las rutas 
 
+
 class Main extends Component {
+
+  constructor(props) {
+    super(props)
+      //  Enviamos a enviar el estado del array de noticias al hijo (LIST) para que pinte 
+    this.state = {
+      //  Guardamos el array de objetos de noticias creadas por nosotros (lo que chute FORM) 
+    }
+  }
+  
   render() {
     return <div>
       <Routes>
