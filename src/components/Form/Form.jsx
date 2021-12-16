@@ -28,7 +28,7 @@ class Form extends Component {
     return (<div>
       <h1>Create News</h1>
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
+        <form id="newsForm" onSubmit={this.handleSubmit}>
           <label htmlFor="title">Title:</label><br />
           <input type="text" id="title" name="title" />
           <br />
