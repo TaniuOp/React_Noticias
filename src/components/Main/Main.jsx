@@ -19,8 +19,8 @@ class Main extends Component {
   }
 
 
-  createNews = (newsTitle, newsDate, byLine, newsAbstract) => {
-    const newNews = {newsTitle, newsDate, byLine, newsAbstract}
+  createNews = (title, published_date, byline, abstract) => {
+    const newNews = {title, published_date, byline, abstract}
     this.setState({createdNews:[...this.state.createdNews, newNews ]})
   }
 
@@ -31,7 +31,7 @@ class Main extends Component {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/form" element={<Form createNews={this.createNews}/>} />
-        <Route path="/list" element={<List giveData={this.state.createNews}/>} />
+        <Route path="/list" element={<List createdNews={this.state.createdNews}/>} />
       </Routes>
     </div>;
   }

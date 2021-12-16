@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// const axios = require('axios');
+import {Link} from 'react-router-dom';
+import './Form.css'
 
 class Form extends Component {
   constructor(props) {
@@ -14,35 +15,36 @@ class Form extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const newsTitle = event.target.newsTitle.value
-    const newsDate = event.target.newsDate.value
-    const byLine = event.target.byLine.value
-    const newsAbstract = event.target.newsAbstract.value
-    
-    this.props.createNews(newsTitle,newsDate,byLine,newsAbstract)
+    const title = event.target.title.value
+    const published_date = event.target.published_date.value
+    const byline = event.target.byline.value
+    const abstract = event.target.abstract.value
+
+    this.props.createNews(title,published_date, byline, abstract)
  
   }
 
   render() {
     return (<div>
-      <h1>News</h1>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="newsTitle">Title:</label><br />
-        <input type="text" id="newsTitle" name="newsTitle" />
-        <br />
-        <label htmlFor="newsDate">Date:</label><br />
-        <input type="newsDate" id="newsDate" name="newsDate" />
-        <br />
-        <label htmlFor="byLine">Autor:</label><br />
-        <input type="text" id="byLine" name="byLine" />
-        <br />
-        <label htmlFor="newsAbstract">Abstract:</label><br />
-        <input type="text" id="newsAbstract" name="newsAbstract" />
-        <br />
-        <br />
-        <button>Add news</button>
-      </form> 
-
+      <h1>Create News</h1>
+      <div className="container">
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="title">Title:</label><br />
+          <input type="text" id="title" name="title" />
+          <br />
+          <label htmlFor="published_date">Date:</label><br />
+          <input type="published_date" id="published_date" name="published_date" />
+          <br />
+          <label htmlFor="byline">Autor:</label><br />
+          <input type="text" id="byline" name="byline" />
+          <br />
+          <label htmlFor="abstract">Abstract:</label><br />
+          <input type="text" id="abstract" name="abstract" />
+          <br />
+          <br />
+          <button><Link to="/list">Add news</Link></button>
+        </form>
+      </div>
     </div>)
   }
 }
