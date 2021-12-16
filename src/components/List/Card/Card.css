@@ -1,0 +1,16 @@
+
+div.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+div.newsCard {
+    margin: 3rem;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 25px 4rem;
+    flex: 25%;
+    max-width: 60%;
+}

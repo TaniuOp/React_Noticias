@@ -31,11 +31,11 @@ function App() {
       <BrowserRouter>
       <userContext.Provider value={value}>
         <Header />
+      <img src={logo} className="App-logo" alt="logo" />
         <Main />
         </userContext.Provider>
       </BrowserRouter>
       <Footer />
-      <img src={logo} className="App-logo" alt="logo" />
     </div>
   );
 }

@@ -1,26 +1,29 @@
-import React, { Fragment } from "react";
+import React, { Component } from "react";
+import './Card.css'
 
-const Card = ({ news }) => {
-    return (
-    <div>
-      {
-        news.map(nyTimesNews =>
-          <Fragment>
-            <p>Title: {nyTimesNews.title}</p>
-            <p>Date: {nyTimesNews.published_date}</p>
-            <p>Autor:{nyTimesNews.byline}</p>
-            <p>Abstract:{nyTimesNews.abstract}</p>
-            <hr />
-          </Fragment>
-        )
-      }
-    </div>
-    );
+
+class Card extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
   }
 
-  Card.defaultProps = {
-    nyTimesNews: []
-    }
-  
-
-export default Card;
+  render() {
+    const {title,published_date, byline, abstract} = this.props.info
+    return (
+      <div className="container">
+        {
+          <div className="newsCard">
+            <p>Title: {title}</p>
+            <p>Date: {published_date}</p>
+            <p>Autor:{byline}</p>
+            <p>Abstract:{abstract}</p>
+            <button onClick={this.props.delete}>Delete</button>
+          </div>
+        }
+      </div>
+    );
+  }
+}
+  export default Card;
