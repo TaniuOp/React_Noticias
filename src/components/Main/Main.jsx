@@ -31,9 +31,8 @@ class Main extends Component {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/form" element={<Form createNews={this.createNews}/>} />
-        <Route path="/list" element={<List/>} />
+        <Route path="/list" element={<List giveData={this.state.createNews}/>} />
       </Routes>
-      {/* <Form createNews={this.createNews}/> */}
     </div>;
   }
 }

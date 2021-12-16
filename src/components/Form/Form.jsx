@@ -15,7 +15,6 @@ class Form extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const newsTitle = event.target.newsTitle.value
-    console.log(newsTitle);
     const newsDate = event.target.newsDate.value
     const byLine = event.target.byLine.value
     const newsAbstract = event.target.newsAbstract.value

@@ -35,6 +35,10 @@ class List extends Component {
       alert('Se han eliminado todas la notificas')
   }
 
+  // getData = () => {
+  //   this.setState({nyTimesNews: [...this.state.nyTimesNews, this.props.giveData]})
+  // }
+
   render() {
     return (<div>
       <h1>News list</h1>
