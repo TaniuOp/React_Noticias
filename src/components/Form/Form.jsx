@@ -42,7 +42,7 @@ class Form extends Component {
           <input type="text" id="abstract" name="abstract" />
           <br />
           <br />
-          <button><Link to="/list">Add news</Link></button>
+          <button>Add news</button>
         </form>
       </div>
     </div>)
