@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
 import './Form.css'
+import {Navigate} from 'react-router-dom';
+
 
 class Form extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Form extends Component {
       //  Enviamos a enviar el estado del array de noticias al hijo (LIST) para que pinte 
     this.state = {
       //  Guardamos el array de objetos de noticias creadas por nosotros (lo que chute FORM) 
-      data : [],
+      redirect: false,
     }
   }
   // funcion callback 
@@ -21,10 +22,15 @@ class Form extends Component {
     const abstract = event.target.abstract.value
 
     this.props.createNews(title,published_date, byline, abstract)
- 
+    this.setState({ redirect: true }); //cambiamos el state de redirect a True cuando se hace click 
   }
-
+  
   render() {
+
+    if (this.state.redirect) {
+      return <Navigate to='/list'/>;
+    }
+
     return (<div>
       <h1>Create News</h1>
       <div className="container">
@@ -33,7 +39,7 @@ class Form extends Component {
           <input type="text" id="title" name="title" />
           <br />
           <label htmlFor="published_date">Date:</label><br />
-          <input type="published_date" id="published_date" name="published_date" />
+          <input type="date" id="published_date" name="published_date" />
           <br />
           <label htmlFor="byline">Autor:</label><br />
           <input type="text" id="byline" name="byline" />
