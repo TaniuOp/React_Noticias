@@ -45,7 +45,8 @@ class Form extends Component {
           <input type="text" id="byline" name="byline" />
           <br />
           <label htmlFor="abstract">Abstract:</label><br />
-          <input type="text" id="abstract" name="abstract" />
+          {/* <input type="text" id="abstract" name="abstract" /> */}
+          <p><textarea name="abstract"id="abstract" placeholder="Escribe aqui la descripcion de la noticia" required></textarea></p>
           <br />
           <br />
           <button>Add news</button>
